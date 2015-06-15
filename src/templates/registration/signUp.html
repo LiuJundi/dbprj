@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}
+{{ title }}
+{% endblock %}
+
+
+{% block jumbotron %}
+<div class="jumbotron">
+  <div class="container">
+    <div class='row'>
+    <div class='col-xs-6'>
+      {% if error %}
+        <h3>{{ error }}</h3>
+      {% endif %}
+      
+      {% if form %}
+        <h1>Sign Up Now!</h1>
+        <form method='POST' action='{% url "signUp" %}'>{% csrf_token %}
+          {{ form|crispy }}
+          <input class='btn btn-default' type='submit' value='Sign Up' />
+        </form>
+      {% else %}
+        <h1>{{ content }}</h1>
+      {% endif %}
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
