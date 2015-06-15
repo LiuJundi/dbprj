@@ -14,7 +14,7 @@
       {% if error %}
         <h3>{{ error }}</h3>
       {% endif %}
-
+      
       {% if form %}
         <h1>Sign Up Now!</h1>
         <form method='POST' action='{% url "signUp" %}'>{% csrf_token %}

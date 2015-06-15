@@ -6,17 +6,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', "getWash.views.home", name="home"),
-    url(r'^account/signUp/$', "getWash.views.signUp", name="signUp"),
+    url(r'^signIn/$', "getWash.views.signIn", name="signIn"),
     url(r'^shopping/$', "getWash.views.shopping", name="shopping"),
     url(r'^unitPrice/$', "getWash.views.unitPrice", name="unitPrice"),
     url(r'^coverArea/$', "getWash.views.coverArea", name="coverArea"),
     url(r'^about/$', "getWash.views.about", name="about"),
-    url(r'^makeOrder/$', "getWash.views.makeOrder", name="makeOrder"),
-
-    url(r'^manage/orders/$', "getWash.views.orders", name="orders"),
-    url(r'^manage/getOrders', "getWash.views.getOrders", name="getOrders"),
-    #url(r'^manage/finishedOrders/$', "getWash.views.finishedOrders", name="finishedOrders"),
-    #url(r'^manage/(?P<school>[a-zA-Z ]+)/(?<building>[a-zA-Z 0-9]+)/$', )
+    url(r'^signUp/$', "getWash.views.signUp", name="signUp"),
 ]
 
 if settings.DEBUG:
